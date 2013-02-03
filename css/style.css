@@ -217,12 +217,13 @@ td { vertical-align: top; }
 /* ==|== primary styles =====================================================
    Author: JK	
    ========================================================================== */
-html, body, #content {
-	width:100%;
+html, body {
+	max-width:100%;
 	font-size:16px;/*default reference*/
 	height: 100%;
 	padding:0;
 	margin:0;
+	-ms-interpolation-mode: nearest-neighbor; /* smooth downsampling for ie7,8, but unfort. not 9 */
 }
 #content {
 	height: auto; min-height: 100%;
@@ -236,7 +237,7 @@ h1 {
 	min-height:400px;
 	font-size:2em;
 	color:white;
-	background-image:url('../img/logo.png');
+	background-image:url('../img/logo-sm.png');
 	background-repeat:no-repeat;
 	background-position:bottom;
 	background-size:50%;
@@ -265,7 +266,7 @@ h1 {
 	}
 
 .factorfiction{
-	width:100%;
+	max-width:480px;
 	overflow: auto;
 	margin-left: auto;
     margin-right: auto;
@@ -322,7 +323,7 @@ p.statement {
 	padding-right:10%;
 	padding-left:5%;
 	height:2.6em;
-	background-image:url(../img/tu.png);
+	background-image:url(../img/tu-sm.png);
 	background-position: center right;
 	background-repeat:no-repeat;
 	background-size: 2.6em 2.6em;
@@ -337,7 +338,7 @@ p.statement {
 	padding-right:5%;
 	padding-left:10%;
 	height:2.6em;
-	background-image:url(../img/td.png);
+	background-image:url(../img/td-sm.png);
 	background-position: center left;
 	background-repeat:no-repeat;
 	background-size: 2.6em 2.6em;
@@ -382,7 +383,7 @@ p.answer {
 	padding:5%;
 	text-align:center;
 	color:white;
-	background-image:url('../img/logo.png');
+	background-image:url('../img/logo-sm.png');
 	background-repeat:no-repeat;
 	background-position:bottom;
 	background-size:20%;
