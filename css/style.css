@@ -221,15 +221,19 @@ html, body, #content {
 	width:100%;
 	font-size:16px;/*default reference*/
 	height: 100%;
+	padding:0;
+	margin:0;
 }
 #content {
 	height: auto; min-height: 100%;
 	}
 /* splash screen */
 h1 {
+	//padding-top:0;
+	margin-top:0;
 	text-align: center;
-	background-color:#336;
-	height:400px;
+	background-color:#2d73ac;
+	min-height:400px;
 	font-size:2em;
 	color:white;
 	background-image:url('../img/logo.png');
@@ -243,7 +247,7 @@ h1 {
 	height: 3em;
 	font-size:2em;
 	float:right;
-	background-color:#558;
+	background-color:#2d73ac;
 	padding: 5%;
 	}
 	
@@ -274,11 +278,11 @@ h1 {
 	position:absolute;
 	bottom:0;
 	left:0;
-	background:#447;
+	background:#2d73ac;
 	overflow:hidden;
 }
 h2 {
-	background-color:#447;
+	background-color:#2d73ac;
 	color:white;
 	font-size:1em;
 	padding:0.2em 0.2em 0.2em 5%;
@@ -293,7 +297,7 @@ h2 {
 	
 }
 .statement {
-	background-color:#447;
+	background-color:#2d73ac;
 	color:white;
 	font-size:1.5em;
 	line-height:1.5em;
@@ -309,10 +313,10 @@ p.statement {
 	display:block;
 }
 .choices a:hover {
-	background-color:#447;
+	background-color:#2d73ac;
 	}
 .btnfact{
-	background-color:#447;
+	background-color:#2d73ac;
 	margin: 0.5em 1em 0.1em 0;
 	width:25%;
 	float:left;
@@ -326,7 +330,7 @@ p.statement {
 	}
 	
 .btnfiction {
-	background-color:#447;
+	background-color:#2d73ac;
 	margin: 0.5em 0 0.1em 0;
 	width:25%;
 	float:right;
@@ -346,6 +350,11 @@ a:link,a:visited{
 	font-size:1.4em;
 }
 
+/*accessibility */
+a:focus, a:active, a:hover{
+	background-color:#56c0fa;
+	}
+
 p.answer {
 	float:left;
 	width:90%;
@@ -358,19 +367,19 @@ p.answer {
 	float:right;
 	width:40%;
 	color:white;
-	background-color:#447;
+	background-color:#2d73ac;
 	height:3em;
 	text-align:right;
-	font-size:1em;
+	font-size:1em !important;
 	padding:0.1em;
 	margin:0 0 2em 0;
 	}
 .finalscore {
-	height:600px;
+	min-height:400px;
 	display:block;
 	clear:both;
 	font-size:1.4em;
-	background-color:#558;
+	background-color:#2d73ac;
 	padding:5%;
 	text-align:center;
 	color:white;
@@ -379,11 +388,8 @@ p.answer {
 	background-position:bottom;
 	background-size:20%;
 	}
-.score {
-	font-size:4em;
-	line-height:6em;
-	}
 footer {
+	/* buffer so we don't hit the bottom opf the page when animating scrolling */
 	height:700px;
 	}
 
