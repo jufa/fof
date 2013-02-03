@@ -313,7 +313,6 @@ p.statement {
 	display:block;
 }
 .choices a:hover {
-	background-color:#2d73ac;
 	}
 .btnfact{
 	background-color:#2d73ac;
@@ -351,7 +350,7 @@ a:link,a:visited{
 }
 
 /*accessibility */
-a:focus, a:active, a:hover{
+a:focus, a:active, a:hover {
 	background-color:#56c0fa;
 	}
 
