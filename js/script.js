@@ -25,7 +25,7 @@
 		} else {
 			$(e.target).css('background-color','#d00');
 		}
-		$('.btnnext:eq('+ff.currIndex+')').html('Your Score:'+ff.correct+'/'+ff.attempted+'<br>Cool, next question please!');
+		$('.btnnext:eq('+ff.currIndex+')').html('Your Score:'+ff.correct+'/'+ff.attempted+'<br>Next question!');
 		$('.btnnext:eq('+ff.currIndex+')').css('visibility','visible');
 		var y=$(window).scrollTop() + $(window).height();
 		var myy = $('.btnnext:eq('+ff.currIndex+')').offset().top;
