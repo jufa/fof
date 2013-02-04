@@ -89,6 +89,9 @@
 	}
 	
 	ff.init = function(){
+		if($(window).height() > 380){
+			$('html, body').css('font-size','16px');//14px is better suited to smaller screens like lt iphone 5
+		}
 		$('html, body').animate({
 			scrollTop: 0
 		}, 400);

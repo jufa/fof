@@ -321,11 +321,11 @@ p.statement {
 .btnfact{
 	background-color:#2d73ac;
 	margin: 0.5em 1em 0.1em 0;
-	width:25%;
+	width:20%;
 	float:left;
-	padding-right:10%;
+	padding-right:15%;
 	padding-left:5%;
-	height:2.6em;
+	height:3.6em;
 	background-image:url(../img/tu-sm.png);
 	background-position: center right;
 	background-repeat:no-repeat;
@@ -335,12 +335,12 @@ p.statement {
 .btnfiction {
 	background-color:#2d73ac;
 	margin: 0.5em 0 0.1em 0;
-	width:25%;
+	width:20%;
 	float:right;
 	text-align:right;
 	padding-right:5%;
-	padding-left:10%;
-	height:2.6em;
+	padding-left:15%;
+	height:3.6em;
 	background-image:url(../img/td-sm.png);
 	background-position: center left;
 	background-repeat:no-repeat;
@@ -350,7 +350,7 @@ p.statement {
 a:link,a:visited{
 	color:white;
 	text-decoration:none;
-	font-size:1.4em;
+	font-size:1.6em;
 }
 
 /*accessibility */
@@ -378,10 +378,10 @@ p.answer {
 	margin:0 0 2em 0;
 	}
 .finalscore {
-	min-height:360px;
+	min-height:350px;
 	display:block;
 	clear:both;
-	font-size:1.4em;
+	font-size:1.2em;
 	background-color:#2d73ac;
 	padding:5%;
 	text-align:center;
