@@ -118,6 +118,7 @@
 
 		$('a').click(function(evt){
 			return false; // avoid jump to '#'
+			//TO DO: evt.preventDefault();  instead?
 		})
 		
 		//start button handler
