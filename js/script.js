@@ -32,7 +32,7 @@
 		if(myy+40>y){
 			//hidden below; scroll down to top of photo:
 			console.log('scrolling');
-			 $('body').animate({
+			 $('body,html').animate({
 				scrollTop: $('.btnnext:eq('+(ff.currIndex)+')').offset().top - $(window).height() + $('.btnnext:eq('+(ff.currIndex)+')').height()
 			}, 200);
 		}
@@ -46,7 +46,7 @@
 		$('.fof:eq('+ff.currIndex+')').css('display','inherit');
 		$('.choices:eq('+ff.currIndex+')').css('display','inherit');
 		//scroll to it:
-		 $('body').animate({
+		 $('body,html').animate({
 			scrollTop: $('.fof:eq(0)').offset().top
 		}, 400);
 	}
@@ -63,7 +63,7 @@
 			$('.choices:eq('+ff.currIndex+')').css('display','inherit');
 			//scroll to the next fof:
 			//$('.factorfiction').scrollTo('.fof:eq(idx+1)');
-			 $('body').animate({
+			 $('body,html').animate({
 				scrollTop: $('.fof:eq('+(idx+1)+')').offset().top
 			}, 400);
 		} else {
@@ -81,7 +81,7 @@
 			$('.finalscore').html(em);
 			//show end screen:
 			$('.finalscore').css('display','inherit');
-			 $('body').animate({
+			 $('body,html').animate({
 				scrollTop: $('.finalscore').offset().top
 			}, 400);
 		}
@@ -94,9 +94,9 @@
 		$('a.btnfiction').on('click', $.proxy(ff.handleBtnClick, this));
 		
 		if($(window).height() > 380){
-			$('body').css('font-size','16px');//14px is better suited to smaller screens like lt iphone 5
+			$('body,html').css('font-size','16px');//14px is better suited to smaller screens like lt iphone 5
 		}
-		$('body').animate({
+		$('body,html').animate({
 			scrollTop: 0
 		}, 400);
 		$('.factorfiction').hide(); 
