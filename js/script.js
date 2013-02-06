@@ -89,6 +89,10 @@
 	}
 	
 	ff.init = function(){
+	// all handlers before hiding elements (ie8 does not bind to hidden)
+		$('a.btnfact').on('click', $.proxy(ff.handleBtnClick, this));
+		$('a.btnfiction').on('click', $.proxy(ff.handleBtnClick, this));
+		
 		if($(window).height() > 380){
 			$('body').css('font-size','16px');//14px is better suited to smaller screens like lt iphone 5
 		}
@@ -98,8 +102,7 @@
 		$('.factorfiction').hide(); 
 		$('.fof').css('display','none');
 		$('.answer').css('visibility','hidden');
-		$('a.btnfact').bind('click', $.proxy(ff.handleBtnClick, this));
-		$('a.btnfiction').bind('click', $.proxy(ff.handleBtnClick, this));
+		
 		
 		//define number of questions
 		ff.max = $('.fof').length;
@@ -108,7 +111,8 @@
 		$('.finalscore').css('display','none');
 
 		$('.fof').append(ff.htmlNext);
-		$('.btnnext').bind('click', $.proxy(ff.handleBtnNext, this));
+		$('.btnnext').on('click', $.proxy(ff.handleBtnNext, this));
+		
 		$('.btnnext').css('cursor','pointer');
 		$('.btnnext').css('visibility','hidden');
 
@@ -117,7 +121,7 @@
 		})
 		
 		//start button handler
-		$('.btnstart').bind('click', $.proxy(ff.handleBtnStart, this));
+		$('.btnstart').on('click', $.proxy(ff.handleBtnStart, this));
 
 		//show everything now:
 		$('.factorfiction').fadeIn(400);
