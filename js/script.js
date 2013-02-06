@@ -32,7 +32,7 @@
 		if(myy+40>y){
 			//hidden below; scroll down to top of photo:
 			console.log('scrolling');
-			 $('html, body').animate({
+			 $('body').animate({
 				scrollTop: $('.btnnext:eq('+(ff.currIndex)+')').offset().top - $(window).height() + $('.btnnext:eq('+(ff.currIndex)+')').height()
 			}, 200);
 		}
@@ -46,7 +46,7 @@
 		$('.fof:eq('+ff.currIndex+')').css('display','inherit');
 		$('.choices:eq('+ff.currIndex+')').css('display','inherit');
 		//scroll to it:
-		 $('html, body').animate({
+		 $('body').animate({
 			scrollTop: $('.fof:eq(0)').offset().top
 		}, 400);
 	}
@@ -63,7 +63,7 @@
 			$('.choices:eq('+ff.currIndex+')').css('display','inherit');
 			//scroll to the next fof:
 			//$('.factorfiction').scrollTo('.fof:eq(idx+1)');
-			 $('html, body').animate({
+			 $('body').animate({
 				scrollTop: $('.fof:eq('+(idx+1)+')').offset().top
 			}, 400);
 		} else {
@@ -81,7 +81,7 @@
 			$('.finalscore').html(em);
 			//show end screen:
 			$('.finalscore').css('display','inherit');
-			 $('html, body').animate({
+			 $('body').animate({
 				scrollTop: $('.finalscore').offset().top
 			}, 400);
 		}
@@ -90,16 +90,16 @@
 	
 	ff.init = function(){
 		if($(window).height() > 380){
-			$('html, body').css('font-size','16px');//14px is better suited to smaller screens like lt iphone 5
+			$('body').css('font-size','16px');//14px is better suited to smaller screens like lt iphone 5
 		}
-		$('html, body').animate({
+		$('body').animate({
 			scrollTop: 0
 		}, 400);
 		$('.factorfiction').hide(); 
 		$('.fof').css('display','none');
 		$('.answer').css('visibility','hidden');
-		$('a.btnfact').on('click', $.proxy(ff.handleBtnClick, this));
-		$('a.btnfiction').on('click', $.proxy(ff.handleBtnClick, this));
+		$('a.btnfact').bind('click', $.proxy(ff.handleBtnClick, this));
+		$('a.btnfiction').bind('click', $.proxy(ff.handleBtnClick, this));
 		
 		//define number of questions
 		ff.max = $('.fof').length;
@@ -108,7 +108,7 @@
 		$('.finalscore').css('display','none');
 
 		$('.fof').append(ff.htmlNext);
-		$('.btnnext').on('click', $.proxy(ff.handleBtnNext, this));
+		$('.btnnext').bind('click', $.proxy(ff.handleBtnNext, this));
 		$('.btnnext').css('cursor','pointer');
 		$('.btnnext').css('visibility','hidden');
 
@@ -117,7 +117,7 @@
 		})
 		
 		//start button handler
-		$('.btnstart').on('click', $.proxy(ff.handleBtnStart, this));
+		$('.btnstart').bind('click', $.proxy(ff.handleBtnStart, this));
 
 		//show everything now:
 		$('.factorfiction').fadeIn(400);

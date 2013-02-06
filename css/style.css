@@ -239,11 +239,13 @@ h1 {
 	min-height:300px;
 	font-size:2em;
 	color:white;
-	background-image:url('../img/logo-sm.png');
-	background-repeat:no-repeat;
-	background-position:bottom;
-	background-size:50%;
 }
+
+h1 img {
+	text-align:center;
+	width:100px;
+	height:100px;
+	}
 
 .btnstart {
 	width:30%;
@@ -252,18 +254,19 @@ h1 {
 	float:right;
 	background-color:#2d73ac;
 	padding: 5%;
+	margin: 1em 0;
 	}
 	
 
 /* fact or fiction */
 
-.fof p {
+.fof  p {
 	margin:0;
 	padding:0;
 	
 }
 
-.factorfiction img {
+.fof img {
 	width:100%;
 	}
 
@@ -329,7 +332,7 @@ p.statement {
 	background-image:url(../img/tu-sm.png);
 	background-position: center right;
 	background-repeat:no-repeat;
-	background-size: 2.6em 2.6em;
+	background-size: 60px 60px;
 	}
 	
 .btnfiction {
@@ -344,7 +347,7 @@ p.statement {
 	background-image:url(../img/td-sm.png);
 	background-position: center left;
 	background-repeat:no-repeat;
-	background-size: 2.6em 2.6em;
+	background-size: 60px 60px;
 	}
 	
 a:link,a:visited{
@@ -386,11 +389,17 @@ p.answer {
 	padding:5%;
 	text-align:center;
 	color:white;
-	background-image:url('../img/logo-xsm.png');
-	background-repeat:no-repeat;
-	background-position:bottom;
-	background-size:20%;
 	}
+.share {
+	background-color:#2d73ac;
+	text-align:center;
+	display:block;
+	clear:both;
+	}
+img.share {
+	width:60px;
+	}
+	
 footer {
 	/* buffer so we don't hit the bottom opf the page when animating scrolling */
 	height:700px;

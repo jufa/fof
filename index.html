@@ -52,7 +52,9 @@
   <div id="#content" role="main">
 			
 	  <div class="factorfiction">
-			<h1>Fact or Fiction:<br/>Canadian Canundrums</h1>
+			<h1>Fact or Fiction:<br/>Canadian Canundrums<br/><img src="img/logo-xsm.png" alt="cnsc logo" />
+			</h1>
+			
 			
 			<a class="btnstart" href="#start" alt="start the quiz">Start the quiz</a>
 			<a name="start"></a>
@@ -123,6 +125,12 @@
 			</div>
 			<!--finish screen-->
 			<div class="finalscore">Thanks for playing!</div>
+			<div class="share">
+				<img alt="share on facebook" src="./img/ico-fb.png" />
+				<img alt="cnsc web site" src="./img/logo-xsm.png" />
+				<img alt="share on twitter" src="./img/ico-tw.png" />
+			</div>
+			
 	  </div><!--factorfiction-->
 	  
   </div><!--main-->
@@ -134,7 +142,7 @@
   <!-- JavaScript at the bottom for fast page loading -->
 
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script src="js/libs/jquery-1.7.1.min.js"></script>
   <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>-->
   
   
@@ -150,10 +158,16 @@
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
        mathiasbynens.be/notes/async-analytics-snippet -->
   <script>
-    var _gaq=[['_setAccount','UA-27702832-1)'],['_trackPageview']];
-    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-    s.parentNode.insertBefore(g,s)}(document,'script'));
+	   var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-27702832-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
   </script>
 </body>
 </html>
