@@ -224,28 +224,53 @@ html, body {
 	padding:0;
 	margin:0;
 	background-color:#eee;
-	-ms-interpolation-mode: nearest-neighbor; /* smooth downsampling for ie7,8, but unfort. not 9 */
+	-ms-interpolation-mode: bicubic; /* smooth downsampling for ie7,8, but unfort. not 9 */
 	-webkit-text-size-adjust: 100%; /*larger font sizes in ios safari are not suitable */
 }
+
+header {
+	margin:0;
+	padding:0;
+	text-align: center;
+	height:0;
+	font-size:2em;
+	}
+
 #content {
 	height: auto; min-height: 100%;
+	overflow:visible;
 	}
+	
 /* splash screen */
 h1 {
-	//padding-top:0;
-	margin-top:0;
+	overflow:visible;
+	padding-top:px;
+	margin-top:65px;
 	text-align: center;
 	background-color:#2d73ac;
-	min-height:300px;
+	min-height:200px;
 	font-size:2em;
 	color:white;
+	z-index:10001;
 }
 
+img.fips {
+    margin-left: auto;
+    margin-right: auto;
+	width:220px;
+	height:auto;
+	overflow:visible;
+	padding: 0.5em 0;
+	margin-top:-60px;
+}
 h1 img {
 	text-align:center;
 	width:100px;
 	height:100px;
+	padding-top:20px;
 	}
+	
+
 
 .btnstart {
 	width:30%;
@@ -268,6 +293,9 @@ h1 img {
 
 .fof img {
 	width:100%;
+	max-width:100%;
+	margin:0 0 1em 0;
+	padding:0;
 	}
 
 .factorfiction{
@@ -323,7 +351,7 @@ p.statement {
 	}
 .btnfact{
 	background-color:#2d73ac;
-	margin: 0.5em 1em 0.1em 0;
+	margin: 0 1em 0.1em 0;
 	width:25%;
 	float:left;
 	padding-right:15%;
@@ -337,7 +365,7 @@ p.statement {
 	
 .btnfiction {
 	background-color:#2d73ac;
-	margin: 0.5em 0 0.1em 0;
+	margin: 0 0 0.1em 0;
 	width:25%;
 	float:right;
 	text-align:right;
@@ -347,7 +375,7 @@ p.statement {
 	background-image:url(../img/td-sm.png);
 	background-position: center left;
 	background-repeat:no-repeat;
-	background-size: 60px 60px;
+	background-size:60px 60px;
 	}
 	
 a:link,a:visited{
@@ -374,12 +402,13 @@ p.answer {
 	width:45%;
 	color:white;
 	background-color:#2d73ac;
-	height:3em;
+	height:4em;
 	text-align:right;
-	font-size:1.2em !important;
-	padding:0.1em;
-	margin:0 0 2em 0;
+	font-size:1.4em !important;
+	padding: 0.2em;
+	margin:0 0 1em 0;
 	}
+	
 .finalscore {
 	min-height:350px;
 	display:block;
@@ -396,6 +425,7 @@ p.answer {
 	display:block;
 	clear:both;
 	}
+	
 img.share {
 	width:60px;
 	}
@@ -404,7 +434,6 @@ footer {
 	/* buffer so we don't hit the bottom opf the page when animating scrolling */
 	height:700px;
 	}
-
 
 
 	
