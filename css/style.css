@@ -271,7 +271,16 @@ h1 img {
 	}
 	
 
-
+.btnlang {
+	width:30%;
+	height: 3em;
+	font-size:2em;
+	float:left;
+	background-color:#2d73ac;
+	padding: 5%;
+	margin: 1em 0;
+	}
+	
 .btnstart {
 	width:30%;
 	height: 3em;

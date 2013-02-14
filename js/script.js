@@ -4,13 +4,12 @@
 
 var fofgame = (function( $ ){
 	
-	currIndex=-1; //what question are we on?
-	max=-1;//number of questions
-	correct = 0;//you suck!
-	attempted = 0;//try harder!
-	htmlNext='<a href="#" class="btnnext">Next!</a>';
-	
-	lang="en";
+	var currIndex=-1; //what question are we on?
+	var max=-1;//number of questions
+	var correct = 0;//you suck!
+	var attempted = 0;//try harder!
+	var htmlNext='<a href="#" class="btnnext">Next!</a>';
+	var lang="en";
 	
 	return {
 		handleBtnClick: function(e){
@@ -72,12 +71,22 @@ var fofgame = (function( $ ){
 				var em = '';//end message
 				var pct = Math.floor(100.0*correct/attempted);
 				var comment='';
-				em='Thanks for playing!<br/>Your Score:<br/><span style="font-size:3em;font-weight:bold;">'+pct+'%</span><br/>';
-				if(pct <= 10) comment = 'Wow, that was abysmal. We have got some serious Wax-On/Wax-Off to do.';
-				if(pct>10) comment = 'Worse than guessing? You may have some misconceptions about nuclear. But that is why we are here. "';
-				if(pct>=50) comment = 'Not too shabby. You are either lucky or quite a bit about nuclear! Still, I would not put you in charge of a nuclear plant or anything. Nothing personal.';
-				if(pct>75) comment = 'Wow, you know a thing or two about nuclear. Our algorithms are impressed. Have you thought a bout a career in being Mostly Right about Stuff?';
-				if(pct>99) comment = 'You are a living, breathing, genius. Or you Googled Wikipedia. We prefer to believe the first one. Bravo!';
+				if(lang=="en"){
+					em='Thanks for playing!<br/>Your Score:<br/><span style="font-size:3em;font-weight:bold;">'+pct+'%</span><br/>';
+					if(pct <= 10) comment = 'Wow, that was abysmal. We have got some serious Wax-On/Wax-Off to do.';
+					if(pct>10) comment = 'Worse than guessing? You may have some misconceptions about nuclear. But that is why we are here.';
+					if(pct>=50) comment = 'Not too shabby. You are either lucky or quite a bit about nuclear! Still, I would not put you in charge of a nuclear plant.';
+					if(pct>75) comment = 'Wow, you know a thing or two about nuclear. Our algorithms are impressed. Have you thought a bout a career in being Mostly Right about Stuff?';
+					if(pct>99) comment = 'You are a living, breathing, genius. Or you Googled Wikipedia. We prefer to believe the first one. Bravo!';
+				} else {
+					em='Merci d’avoir joué! <br/>Ton résultat:<br/><span style="font-size:3em;font-weight:bold;">'+pct+'%</span><br/>';
+					if(pct <= 10) comment = 'Eh bien, c’est catastrophique. Nous avons encore pas mal de chemin à faire. ';
+					if(pct>10) comment = 'Tu n’aurais pas fait pire en devinant les réponses? Tu as peut-être certaines idées fausses concernant le nucléaire.';
+					if(pct>=50) comment = 'Pas trop mal. Ou bien tu es chanceux, ou tu t’y connais un peu en nucléaire. Mais je ne te confierais pas la responsabilité d’une centrale ou d’une activité nucléaire. Cela n’a rien de personnel.';
+					if(pct>75) comment = 'Wow! Tu en connais pas mal sur le nucléaire. Nos algorithmes sont impressionnés. As-tu déjà pensé à faire carrière comme la personne qui sait pratiquement tout sur tout?';
+					if(pct>99) comment = 'Tu es un génie en chair et en os. Ou tu as fait des recherches dans Wikipédia. Nous préférons croire que tu es un génie. Bravo!';
+				}
+				
 				em+=comment;
 				$('.finalscore').html(em);
 				//show end screen:
@@ -90,6 +99,8 @@ var fofgame = (function( $ ){
 		},
 		
 		init: function(){
+			lang = $('html').attr('lang');
+			console.log('lang: '+lang);
 		// all handlers before hiding elements (ie8 does not bind to hidden)
 			$('.fof').append(htmlNext);
 			$('a.btnfact').on('click', this.handleBtnClick);
@@ -121,7 +132,8 @@ var fofgame = (function( $ ){
 
 			$('a').click(function(evt){
 				//return false; // avoid jump to '#'
-				if( $(evt.target).parent().parent().hasClass('share') == true){
+				if( $(evt.target).parent().parent().hasClass('share') == true || $(evt.target).hasClass('btnlang') == true)
+				{
 				} else {
 					evt.preventDefault(); 
 				}
